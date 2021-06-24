@@ -1,12 +1,14 @@
-import React from 'react';
-import { Heading } from './components/Typography';
-import { Logo } from './components/Icon';
+import { Heading, SubHeading, Title, Caption, Body } from './components/Typography';
+import { TypoTag } from './components/Typography';
 
 function App() {
   return (
     <div>
-      <Heading headingLevel="h1">Singleton React</Heading>
-      <Logo />
+      <Heading typoTag={TypoTag.H1}>Heading</Heading>
+      <SubHeading typoTag={TypoTag.H1}>SubHeading</SubHeading>
+      <Title typoTag={TypoTag.H1}>Title</Title>
+      <Body typoTag={TypoTag.H1}>Body</Body>
+      <Caption typoTag={TypoTag.H1}>Caption</Caption>
     </div>
   );
 }
