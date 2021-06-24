@@ -23,7 +23,6 @@ const responsiveTypo = (device: TypoProperties | undefined) => {
   return '';
 };
 
-// Heading typography style
 const StyledTypo = styled.div<TypoStyle>`
   font-size: ${(props) => props.mobile.fontSize};
   font-weight: ${(props) => `var(--font-weight-${props.mobile.fontWeight || 'regular'})`};
