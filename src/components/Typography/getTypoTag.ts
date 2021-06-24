@@ -8,21 +8,21 @@ export enum TypoTag {
   Paragraph,
 }
 
-export const getTypoTag = (tag: number) => {
+export const getTypoTag = (tag: TypoTag) => {
   switch (tag) {
-    case 0:
+    case TypoTag.H1:
       return 'h1';
-    case 1:
+    case TypoTag.H2:
       return 'h2';
-    case 2:
+    case TypoTag.H3:
       return 'h3';
-    case 3:
+    case TypoTag.H4:
       return 'h4';
-    case 4:
+    case TypoTag.H5:
       return 'h5';
-    case 5:
+    case TypoTag.H6:
       return 'h6';
-    case 6:
+    case TypoTag.Paragraph:
       return 'p';
     default:
       return 'div';
