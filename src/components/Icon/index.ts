@@ -1,0 +1,14 @@
+export { default as Logo } from './Logo';
+export { default as MenuBars } from './MenuBars';
+export { default as MenuClose } from './MenuClose';
+export { default as Lock } from './Lock';
+export { default as Flame } from './Flame';
+export { default as Puzzle } from './Puzzle';
+export { default as Team } from './Team';
+export { default as User } from './User';
+export { default as Mail } from './Mail';
+export { default as YouTube } from './Youtube';
+export { default as Twitter } from './Twitter';
+export { default as Linkedin } from './Linkedin';
+export { default as ArrowRightAlt } from './ArrowRightAlt';
+export { default as ArrowForward } from './ArrowForward';

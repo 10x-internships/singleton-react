@@ -1,6 +1,13 @@
+import React from 'react';
 import styled from 'styled-components';
 
-export const Heading = styled.h1`
+type HeadingProps = {
+  headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+  children: React.ReactNode;
+};
+
+// Heading typography style
+const StyledHeading = styled.div`
   font-size: 40px;
   font-weight: var(--font-weight-semi-bold);
   line-height: 48px;
@@ -16,8 +23,12 @@ export const Heading = styled.h1`
     line-height: 78px;
   }
 `;
+export const Heading = ({ headingLevel, children }: HeadingProps) => {
+  return <StyledHeading as={headingLevel}>{children}</StyledHeading>;
+};
 
-export const SubHeading = styled.h2`
+// SubHeading typography style
+const StyledSubHeading = styled.div`
   font-size: 40px;
   font-weight: var(--font-weight-medium);
   line-height: 48px;
@@ -28,8 +39,12 @@ export const SubHeading = styled.h2`
     line-height: 72px;
   }
 `;
+export const SubHeading = ({ headingLevel, children }: HeadingProps) => {
+  return <StyledSubHeading as={headingLevel}>{children}</StyledSubHeading>;
+};
 
-export const Title = styled.h3`
+// Title typography style
+const StyledTitle = styled.div`
   font-size: 18px;
   font-weight: var(--font-weight-medium);
   line-height: 30px;
@@ -45,14 +60,22 @@ export const Title = styled.h3`
     line-height: 45px;
   }
 `;
+export const Title = ({ headingLevel, children }: HeadingProps) => {
+  return <StyledTitle as={headingLevel}>{children}</StyledTitle>;
+};
 
-export const Caption = styled.h4`
+// Caption typography style
+const StyledCaption = styled.div`
   font-size: 16px;
   font-weight: var(--font-weight-regular);
   line-height: 24px;
 `;
+export const Caption = ({ headingLevel, children }: HeadingProps) => {
+  return <StyledCaption as={headingLevel}>{children}</StyledCaption>;
+};
 
-export const Body = styled.p`
+// Body typography style
+const StyledBody = styled.div`
   font-size: 14px;
   font-weight: var(--font-weight-regular);
   line-height: 30px;
@@ -67,3 +90,6 @@ export const Body = styled.p`
     line-height: 28px;
   }
 `;
+export const Body = ({ headingLevel, children }: HeadingProps) => {
+  return <StyledBody as={headingLevel}>{children}</StyledBody>;
+};

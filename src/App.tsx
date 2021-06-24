@@ -1,14 +1,12 @@
 import React from 'react';
 import { Heading } from './components/Typography';
-import { ReactComponent as Logo } from './assets/logo.svg';
+import { Logo } from './components/Icon';
 
 function App() {
   return (
-    <div className="App">
-      <Heading>Singleton React</Heading>
-      <a href="/">
-        <Logo />
-      </a>
+    <div>
+      <Heading headingLevel="h1">Singleton React</Heading>
+      <Logo />
     </div>
   );
 }
