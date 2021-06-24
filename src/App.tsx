@@ -1,5 +1,6 @@
 import { Heading, SubHeading, Title, Caption, Body } from './components/Typography';
 import { TypoTag } from './components/Typography';
+import { Logo } from './components/Icon';
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <Title typoTag={TypoTag.H1}>Title</Title>
       <Body typoTag={TypoTag.H1}>Body</Body>
       <Caption typoTag={TypoTag.H1}>Caption</Caption>
+      <hr />
+      <Logo />
     </div>
   );
 }
