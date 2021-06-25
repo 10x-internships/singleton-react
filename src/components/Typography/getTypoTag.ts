@@ -6,6 +6,7 @@ export enum TypoTag {
   H5,
   H6,
   Paragraph,
+  Span,
 }
 
 export const getTypoTag = (tag: TypoTag) => {
@@ -24,6 +25,8 @@ export const getTypoTag = (tag: TypoTag) => {
       return 'h6';
     case TypoTag.Paragraph:
       return 'p';
+    case TypoTag.Span:
+      return 'span';
     default:
       return 'div';
   }
