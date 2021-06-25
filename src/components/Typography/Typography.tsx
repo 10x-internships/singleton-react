@@ -5,15 +5,13 @@ import StyledTypo from './style';
 type TypoProps = {
   typoTag: TypoTag;
   children: React.ReactNode;
-  className?: string;
 };
 
 // Heading typography
-export const Heading = ({ typoTag, children, className }: TypoProps) => {
+export const Heading = ({ typoTag, children }: TypoProps) => {
   return (
     <StyledTypo
       as={getTypoTag(typoTag)}
-      className={className}
       mobile={{ fontSize: '40px', fontWeight: 'semi-bold', lineHeight: '48px' }}
       tablet={{ fontSize: '68px', lineHeight: '72px' }}
       desktop={{ fontSize: '72px', fontWeight: 'medium', lineHeight: '78px' }}
@@ -24,11 +22,10 @@ export const Heading = ({ typoTag, children, className }: TypoProps) => {
 };
 
 // SubHeading typography
-export const SubHeading = ({ typoTag, children, className }: TypoProps) => {
+export const SubHeading = ({ typoTag, children }: TypoProps) => {
   return (
     <StyledTypo
       as={getTypoTag(typoTag)}
-      className={className}
       mobile={{ fontSize: '40px', fontWeight: 'medium', lineHeight: '48px' }}
       desktop={{ fontSize: '64px', fontWeight: 'regular', lineHeight: '72px' }}
     >
@@ -38,11 +35,10 @@ export const SubHeading = ({ typoTag, children, className }: TypoProps) => {
 };
 
 // Title typography
-export const Title = ({ typoTag, children, className }: TypoProps) => {
+export const Title = ({ typoTag, children }: TypoProps) => {
   return (
     <StyledTypo
       as={getTypoTag(typoTag)}
-      className={className}
       mobile={{ fontSize: '18px', fontWeight: 'medium', lineHeight: '30px' }}
       tablet={{ fontSize: '30px', lineHeight: '36px' }}
       desktop={{ fontSize: '36px', fontWeight: 'regular', lineHeight: '45px' }}
@@ -53,11 +49,10 @@ export const Title = ({ typoTag, children, className }: TypoProps) => {
 };
 
 // Body typography style
-export const Body = ({ typoTag, children, className }: TypoProps) => {
+export const Body = ({ typoTag, children }: TypoProps) => {
   return (
     <StyledTypo
       as={getTypoTag(typoTag)}
-      className={className}
       mobile={{ fontSize: '14px', lineHeight: '20px' }}
       tablet={{ fontSize: '16px', lineHeight: '24px' }}
       desktop={{ fontSize: '18px', lineHeight: '28px' }}
@@ -68,9 +63,9 @@ export const Body = ({ typoTag, children, className }: TypoProps) => {
 };
 
 // Caption typography style
-export const Caption = ({ typoTag, children, className }: TypoProps) => {
+export const Caption = ({ typoTag, children }: TypoProps) => {
   return (
-    <StyledTypo as={getTypoTag(typoTag)} className={className} mobile={{ fontSize: '16px', lineHeight: '24px' }}>
+    <StyledTypo as={getTypoTag(typoTag)} mobile={{ fontSize: '16px', lineHeight: '24px' }}>
       {children}
     </StyledTypo>
   );
