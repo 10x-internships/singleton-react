@@ -1,17 +1,21 @@
-import { Heading, SubHeading, Title, Caption, Body } from './components/Typography';
-import { TypoTag } from './components/Typography';
-import { Logo } from './components/Icon';
+import { ArrowForward } from './components/Icon';
+import { Button } from './components/Button/Button';
 
 function App() {
   return (
     <div>
-      <Heading typoTag={TypoTag.H1}>Heading</Heading>
-      <SubHeading typoTag={TypoTag.H1}>SubHeading</SubHeading>
-      <Title typoTag={TypoTag.H1}>Title</Title>
-      <Body typoTag={TypoTag.H1}>Body</Body>
-      <Caption typoTag={TypoTag.H1}>Caption</Caption>
-      <hr />
-      <Logo />
+      <Button variant="filled" color="primary">
+        Button
+      </Button>
+      <Button variant="outlined" color="primary">
+        Button
+      </Button>
+      <Button variant="ghost" color="primary">
+        Button
+      </Button>
+      <Button variant="filled" color="primary">
+        Button <ArrowForward />
+      </Button>
     </div>
   );
 }
