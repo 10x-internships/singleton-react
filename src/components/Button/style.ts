@@ -13,9 +13,9 @@ const buttonBase = (color: string, border: string | number, borderRadius: string
 
   ${disabled &&
   `
-      pointer-events: none;
-      cursor: default;
-      user-select: none;
+    pointer-events: none;
+    cursor: default;
+    user-select: none;
   `}
 `;
 
