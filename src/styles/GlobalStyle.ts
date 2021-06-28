@@ -47,6 +47,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: var(--font-weight-regular);
+    color: ${palette.neutral.black};
   }
 
   a {
