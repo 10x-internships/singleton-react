@@ -1,14 +1,13 @@
-import React from 'react';
-import { Heading } from './components/Typography';
-import { ReactComponent as Logo } from './assets/logo.svg';
+import { Button, ButtonIcon, ButtonColor, ButtonVariant } from './components/Button';
+import { ArrowForward, ArrowRightAlt } from './components/Icon';
 
 function App() {
   return (
-    <div className="App">
-      <Heading>Singleton React</Heading>
-      <a href="/">
-        <Logo />
-      </a>
+    <div>
+      <Button colorType={ButtonColor.Primary} variant={ButtonVariant.Filled} icon={<ArrowForward />}>
+        Button
+      </Button>
+      <ButtonIcon icon={<ArrowRightAlt />} disabled />
     </div>
   );
 }
