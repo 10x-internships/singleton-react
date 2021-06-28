@@ -1,7 +1,7 @@
 import React from 'react';
 import { Caption, TypoTag } from '../Typography';
-import { StyledButton, StyledButtonProps, StyledButtonIcon, StyledButtonIconProps } from './style';
-import clsx from 'clsx';
+import { StyledButton, StyledButtonIcon } from './style';
+import { StyledButtonProps, StyledButtonIconProps } from './type';
 
 type ButtonLinkProps = React.ComponentPropsWithoutRef<'a'> & React.ComponentPropsWithoutRef<'button'>;
 type ButtonProps = StyledButtonProps & ButtonLinkProps;
@@ -11,14 +11,7 @@ export const Button = (props: ButtonProps) => {
   const { variant, colorType, icon, className, ...others } = props;
 
   return (
-    <StyledButton
-      variant={variant}
-      colorType={colorType}
-      icon={icon}
-      as={others.href ? 'a' : 'button'}
-      className={clsx(others.disabled && 'btn-disabled', className)}
-      {...others}
-    >
+    <StyledButton variant={variant} colorType={colorType} icon={icon} as={others.href ? 'a' : 'button'} {...others}>
       <Caption typoTag={TypoTag.Span}>{others.children}</Caption>
       {icon}
     </StyledButton>
@@ -26,14 +19,10 @@ export const Button = (props: ButtonProps) => {
 };
 
 export const ButtonIcon = (props: ButtonIconProps) => {
+  const { icon, href, ...others } = props;
   return (
-    <StyledButtonIcon
-      icon={props.icon}
-      as={props.href ? 'a' : 'button'}
-      className={clsx(props.disabled && 'btn-disabled', props.className)}
-      {...props}
-    >
-      {props.icon}
+    <StyledButtonIcon icon={icon} as={href ? 'a' : 'button'} {...others}>
+      {icon}
     </StyledButtonIcon>
   );
 };

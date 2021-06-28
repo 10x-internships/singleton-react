@@ -1,13 +1,13 @@
-import { Button, ButtonIcon } from './components/Button';
+import { Button, ButtonIcon, ButtonColor, ButtonVariant } from './components/Button';
 import { ArrowForward, ArrowRightAlt } from './components/Icon';
 
 function App() {
   return (
     <div>
-      <Button colorType="primary" variant="filled" icon={<ArrowForward />}>
+      <Button colorType={ButtonColor.Primary} variant={ButtonVariant.Filled} icon={<ArrowForward />} disabled>
         Button
       </Button>
-      <ButtonIcon icon={<ArrowRightAlt />} />
+      <ButtonIcon icon={<ArrowRightAlt />} disabled />
     </div>
   );
 }

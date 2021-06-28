@@ -1,18 +1,9 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { palette } from '../../styles/GlobalStyle';
+import { StyledButtonProps, StyledButtonIconProps } from './type';
 
-export type StyledButtonProps = {
-  colorType: 'primary' | 'secondary';
-  variant: 'filled' | 'outlined' | 'ghost';
-  icon?: JSX.Element;
-};
-
-export type StyledButtonIconProps = {
-  icon?: JSX.Element;
-};
-
-const buttonBase = (color: string, border: string | number, borderRadius: string, bg: string) => css`
+const buttonBase = (color: string, border: string | number, borderRadius: string, bg: string, disabled?: boolean) => css`
   color: ${color};
   background-color: ${bg};
   border: ${border};
@@ -20,16 +11,17 @@ const buttonBase = (color: string, border: string | number, borderRadius: string
   cursor: pointer;
   transition: all 0.25s linear;
 
-  &.btn-disabled {
-    pointer-events: none;
-    cursor: default;
-    user-select: none;
-  }
+  ${disabled &&
+  `
+      pointer-events: none;
+      cursor: default;
+      user-select: none;
+  `}
 `;
 
 // Style for normal button
 export const StyledButton = styled.button<StyledButtonProps>`
-  ${buttonBase(palette.neutral.white, '2px solid transparent', '5px', 'transparent')}
+  ${(props) => buttonBase(palette.neutral.white, '2px solid transparent', '5px', 'transparent', props.disabled)}
 
   padding: 8px 16px;
   text-align: center;
@@ -40,9 +32,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
     margin-left: 8px;
   }
 
-  ${({ variant, colorType }) => {
+  ${({ variant, colorType, disabled }) => {
     const alpha = 0.1;
-
     if (variant === 'filled') {
       return css`
         background-color: ${palette[colorType].main};
@@ -53,9 +44,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
         &:active {
           background-color: ${palette[colorType].dark};
         }
-        &.btn-disabled {
-          background-color: ${palette[colorType].lightest};
-        }
+        ${disabled && `background-color: ${palette[colorType].lightest};`}
       `;
     }
 
@@ -73,18 +62,19 @@ export const StyledButton = styled.button<StyledButtonProps>`
         background-color: ${rgba(`${palette[colorType].dark}`, alpha)};
         ${variant === 'outlined' && `border-color: ${palette[colorType].dark};`}
       }
-      &.btn-disabled {
+      ${disabled &&
+      `
         color: ${palette[colorType].lightest};
         background-color: ${rgba(`${palette[colorType].lightest}`, alpha)};
         ${variant === 'outlined' && `border-color: ${palette[colorType].lightest};`}
-      }
+      `}
     `;
   }};
 `;
 
 // Style for Button Circle with Icon
 export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
-  ${buttonBase(palette.secondary.main, 0, '100%', palette.neutral.white)}
+  ${(props) => buttonBase(palette.secondary.main, 0, '100%', palette.neutral.white, props.disabled)}
   width: 64px;
   height: 64px;
   display: flex;
@@ -98,8 +88,10 @@ export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
   &:active {
     background-color: ${palette.secondary.dark};
   }
-  &.btn-disabled {
+  ${(props) =>
+    props.disabled &&
+    `
     color: ${palette.neutral.white};
     background-color: ${palette.secondary.lightest};
-  }
+  `}
 `;
