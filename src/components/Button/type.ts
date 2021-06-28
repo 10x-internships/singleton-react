@@ -13,10 +13,8 @@ export type StyledButtonProps = {
   colorType: ButtonColor;
   variant: ButtonVariant;
   icon?: JSX.Element;
-  disabled?: boolean;
 };
 
 export type StyledButtonIconProps = {
   icon?: JSX.Element;
-  disabled?: boolean;
 };
