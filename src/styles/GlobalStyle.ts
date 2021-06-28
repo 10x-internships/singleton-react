@@ -1,31 +1,38 @@
 import { createGlobalStyle } from 'styled-components';
 
+export const palette = {
+  primary: {
+    main: '#6ac85a',
+    light: '#87d37a',
+    lightest: '#d2eecd',
+    dark: '#54A048',
+  },
+  secondary: {
+    main: '#793bff',
+    light: '#9362FF',
+    lightest: '#D6C4F8',
+    dark: '#602FCC',
+  },
+  accent: {
+    orange: '#ff6d43',
+    orangeLight: '#ff6e42',
+    blue: '#465eff',
+    blueLight: '#a9abbd',
+    yellow: '#f9c45c',
+  },
+  neutral: {
+    white: '#fff',
+    black: '#111',
+    gray: '#a0a0a0',
+    grayLight: '#f8f8f8',
+  },
+};
+
 const GlobalStyle = createGlobalStyle`
   :root {
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semi-bold: 600;
-
-    --green: #6ac85a;
-    --green-light: #87D37A;
-    --green-lightest: #D2EECD;
-    --green-dark: #54A048;
-
-    --purple: #793bff;
-    --purple-light: #9362FF;
-    --purple-lightest: #D6C4F8;
-    --purple-dark: #602FCC;
-
-    --orange: #ff6d43;
-    --orange-light: #ff6e42;
-    --blue: #465eff;
-    --blue-light: #a9abbd;
-    --yellow: #f9c45c;
-
-    -black: #111;
-    -white: #fff;
-    -gray: #a0a0a0;
-    -gray-light: #f8f8f8;
   }
 
   *,
@@ -38,9 +45,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: var(--font-weight-regular);
-    line-height: 1;
   }
 
   a {
