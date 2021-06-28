@@ -1,5 +1,6 @@
 import { Button, ButtonIcon, ButtonColor, ButtonVariant } from './components/Button';
-import { ArrowForward, ArrowRightAlt } from './components/Icon';
+import { ArrowForward, ArrowRightAlt, Mail } from './components/Icon';
+import { TextField } from './components/TextField';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         Button
       </Button>
       <ButtonIcon icon={<ArrowRightAlt />} disabled />
+      <TextField icon={<Mail />} placeholder="Enter your email..." />
     </div>
   );
 }
