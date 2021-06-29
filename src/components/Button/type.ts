@@ -10,8 +10,8 @@ export enum ButtonVariant {
 }
 
 export type StyledButtonProps = {
-  colorType: ButtonColor;
-  variant: ButtonVariant;
+  colorType?: ButtonColor;
+  variant?: ButtonVariant;
   icon?: JSX.Element;
 };
 
