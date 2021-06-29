@@ -1,7 +1,13 @@
-import Hero from '../layout/Hero/Hero';
+import { Hero } from '../layout/Hero';
+import { Logos } from '../layout/Logos';
 
 const Home = () => {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <Logos />
+    </>
+  );
 };
 
 export default Home;
