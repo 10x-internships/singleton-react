@@ -18,6 +18,10 @@ const StyledLogos = styled.section`
       column-gap: 32px;
     }
 
+    @media screen and (min-width: 1024px) {
+      width: 80%;
+    }
+
     @media screen and (min-width: 1200px) {
       padding-top: 48px;
       padding-bottom: 48px;
@@ -35,10 +39,6 @@ const LogoWrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 14%;
-  }
-
-  @media screen and (min-width: 1200px) {
     width: auto;
   }
 `;
