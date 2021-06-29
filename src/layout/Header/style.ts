@@ -10,6 +10,10 @@ export const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (min-width: 1024px) {
+      justify-content: flex-start;
+    }
   }
 
   & svg {

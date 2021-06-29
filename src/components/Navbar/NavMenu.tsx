@@ -47,6 +47,7 @@ const StyledNavMenu = styled.nav<{ isMenuOpen: boolean }>`
     width: auto;
     height: auto;
     padding: 0;
+    margin: 0 121px 0 206px;
     background-color: transparent;
     transform: translateX(0%);
 
@@ -58,6 +59,10 @@ const StyledNavMenu = styled.nav<{ isMenuOpen: boolean }>`
     & ${NavMenuAuth} {
       display: none;
     }
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 0 214px 0 299px;
   }
 `;
 

@@ -9,6 +9,8 @@ const StyledTextField = styled.div<{ isFocus: boolean }>`
   align-items: center;
 
   & svg {
+    display: block;
+    height: 24px;
     color: ${palette.neutral.gray};
     margin-right: 8px;
     transition: color 0.25s linear;
