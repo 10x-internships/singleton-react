@@ -4,7 +4,7 @@ import { Logo, MenuBars, MenuClose } from '../../components/Icon';
 import Container from '../../components/Container';
 import { NavMenu } from '../../components/Navbar';
 import { Button, ButtonColor, ButtonVariant } from '../../components/Button';
-import { StyledHeader, HeaderLogo, MenuIcon, Overlay, NavAuth } from './style';
+import { StyledHeader, HeaderLogo, MenuIcon, Overlay, HeaderAuth } from './style';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -24,14 +24,14 @@ const Header = () => {
           <Logo />
         </HeaderLogo>
         <NavMenu isMenuOpen={isMenuOpen} />
-        <NavAuth>
+        <HeaderAuth>
           <Button colorType={ButtonColor.Secondary} variant={ButtonVariant.Ghost}>
             Login
           </Button>
           <Button colorType={ButtonColor.Secondary} variant={ButtonVariant.Outlined}>
             Sign up
           </Button>
-        </NavAuth>
+        </HeaderAuth>
         <MenuIcon onClick={handleToggleMenu}>{isMenuOpen ? <MenuClose /> : <MenuBars />}</MenuIcon>
         <Overlay isMenuOpen={isMenuOpen} onClick={handleToggleMenu} />
       </Container>

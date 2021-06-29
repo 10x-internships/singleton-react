@@ -51,7 +51,7 @@ export const Overlay = styled.div<{ isMenuOpen: boolean }>`
     `}
 `;
 
-export const NavAuth = styled.div`
+export const HeaderAuth = styled.div`
   display: none;
 
   & button:first-child {
