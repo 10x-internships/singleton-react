@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 import { palette } from '../../styles/GlobalStyle';
-import { StyledButtonProps, StyledButtonIconProps } from './type';
+import { StyledButtonProps, StyledButtonIconProps, ButtonVariant, ButtonColor } from './type';
 
 const buttonBase = (color: string, border: string | number, borderRadius: string, bg: string, disabled?: boolean) => css`
   color: ${color};
@@ -23,7 +23,7 @@ const buttonBase = (color: string, border: string | number, borderRadius: string
 export const StyledButton = styled.button<StyledButtonProps>`
   ${(props) => buttonBase(palette.neutral.white, '2px solid transparent', '5px', 'transparent', props.disabled)}
 
-  padding: 8px 16px;
+  padding: 6px 14px;
   text-align: center;
   display: inline-flex;
   align-items: center;
@@ -32,7 +32,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
     margin-left: 8px;
   }
 
-  ${({ variant, colorType, disabled }) => {
+  ${({ variant = ButtonVariant.Filled, colorType = ButtonColor.Primary, disabled }) => {
     const alpha = 0.1;
     if (variant === 'filled') {
       return css`
