@@ -4,16 +4,12 @@ import { palette } from '../../styles/GlobalStyle';
 import Container from '../../components/Container';
 
 export const StyledHeader = styled.header`
-  padding: 28px 0;
+  padding: 20px 0;
 
   & ${Container} {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @media screen and (min-width: 1024px) {
-      justify-content: flex-start;
-    }
   }
 
   & svg {
