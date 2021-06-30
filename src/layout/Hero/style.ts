@@ -11,8 +11,14 @@ export const StyledHero = styled.section`
 
     & ${Container} {
       display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    & ${Container} {
       align-items: center;
-      justify-content: space-between;
+      gap: 30px;
     }
   }
 `;
@@ -22,49 +28,58 @@ export const HeroContent = styled.div`
     margin: 0 auto;
   }
 
-  & h1 {
-    max-width: 656px;
-  }
-
   & p {
-    max-width: 460px;
     margin: 24px auto;
     color: ${palette.neutral.gray};
   }
 
+  @media screen and (min-width: 768px) {
+    & h1 {
+      width: 83.33%;
+    }
+
+    & p {
+      width: 66.66%;
+      margin: 36px auto 32px;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
+    width: 66.66%;
+
     & > * {
       margin: 0;
     }
 
-    & p {
-      margin: 24px 0;
+    & h1 {
+      width: 100%;
     }
+
+    & p {
+      margin: 36px 0 32px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 58.33%;
   }
 `;
 
 export const HeroImageWrapper = styled.div`
   display: none;
 
-  @media screen and (min-width: 1024px) {
-    display: block;
-
-    & img {
-      max-width: 360px;
-    }
+  & img {
+    width: 100%;
   }
 
-  @media screen and (min-width: 1200px) {
-    & img {
-      max-width: 460px;
-    }
+  @media screen and (min-width: 1024px) {
+    display: block;
+    flex: 1;
   }
 `;
 
 export const HeroContact = styled.form`
-  max-width: 418px;
   display: flex;
-  justify-content: space-between;
 
   /* Style for the TextField  */
   & div:first-child {
@@ -72,7 +87,7 @@ export const HeroContact = styled.form`
     margin-right: 16px;
   }
 
-  & button {
-    max-width: 124px;
+  @media screen and (min-width: 768px) {
+    width: 58.33%;
   }
 `;

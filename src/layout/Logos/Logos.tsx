@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import logosData from './logosData';
+import { rgba } from 'polished';
 
 const StyledLogos = styled.section`
   margin-top: 32px;
@@ -19,13 +20,13 @@ const StyledLogos = styled.section`
     }
 
     @media screen and (min-width: 1024px) {
-      width: 80%;
+      width: 83.33%;
     }
 
     @media screen and (min-width: 1200px) {
       padding-top: 48px;
       padding-bottom: 48px;
-      border-top: 1px solid #a9abbd;
+      border-top: 1px solid ${rgba('#a9abbd', 0.4)};
     }
   }
 `;
