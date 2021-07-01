@@ -83,7 +83,7 @@ const FeaturesExplore = styled.div`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     & p {
       width: 62%;
       margin: 32px auto 24px;
