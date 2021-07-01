@@ -39,9 +39,9 @@ export const Title = ({ typoTag, children }: TypoProps) => {
   return (
     <StyledTypo
       as={getTypoTag(typoTag)}
-      mobile={{ fontSize: '18px', fontWeight: 'medium', lineHeight: '30px' }}
+      mobile={{ fontSize: '18px', fontWeight: 'medium', lineHeight: '24px' }}
       tablet={{ fontSize: '30px', lineHeight: '36px' }}
-      desktop={{ fontSize: '36px', fontWeight: 'regular', lineHeight: '45px' }}
+      desktop={{ fontSize: '32px', fontWeight: 'regular', lineHeight: '40px' }}
     >
       {children}
     </StyledTypo>
