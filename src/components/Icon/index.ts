@@ -12,3 +12,4 @@ export { default as Twitter } from './Twitter';
 export { default as Linkedin } from './Linkedin';
 export { default as ArrowRightAlt } from './ArrowRightAlt';
 export { default as ArrowForward } from './ArrowForward';
+export { default as PlayCircle } from './PlayCircle';

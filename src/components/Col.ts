@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export enum ColumnNumber {
-  ONE,
+  ONE = 1,
   TWO,
   THREE,
   FOUR,
@@ -16,7 +16,6 @@ export enum ColumnNumber {
 }
 
 type ColProps = {
-  colNum?: ColumnNumber;
   sm?: ColumnNumber;
   md?: ColumnNumber;
   lg?: ColumnNumber;
@@ -25,30 +24,37 @@ type ColProps = {
   order?: number;
 };
 
-const calcCol = (col: number, isDesktop?: true) => {
+const calcCol = (col: number, isDesktop?: boolean) => {
   if (isDesktop) {
-    return `calc(${(col / 12) * 100}% - 20px)`;
+    return `calc(${(col / 12) * 100}% - 30px)`; // Subtract the gutter from desktop
   }
 
-  return `calc(${(col / 12) * 100}% - 30px)`;
+  return `calc(${(col / 12) * 100}% - 20px)`; // Subtract the gutter from tablet & mobile
 };
 
 const Col = styled.div<ColProps>`
+  margin-left: 20px;
   flex-grow: 1;
-  ${(props) => props.sm && `flex-basis: ${calcCol(props.sm)};`}
-  ${(props) => props.center && `margin: 0 auto;`}
+  ${(props) => props.sm && `flex: 0 0 ${calcCol(props.sm)};`}
+  ${(props) => props.center && `margin-left: auto; margin-right: auto`}
   ${(props) => props.order && `order: ${props.order}`}
 
   @media screen and (min-width: 768px) {
-    ${(props) => props.md && `flex-basis: ${calcCol(props.md)};`}
+    ${(props) => props.md && `flex: 0 0 ${calcCol(props.md)};`}
   }
 
   @media screen and (min-width: 1024px) {
-    ${(props) => props.lg && `flex-basis: ${calcCol(props.lg)};`}
+    ${(props) => props.lg && `flex: 0 0 ${calcCol(props.lg)};`}
   }
 
   @media screen and (min-width: 1200px) {
-    ${(props) => props.xl && `flex-basis: ${calcCol(props.xl)};`}
+    margin-left: 30px;
+    ${(props) => {
+      if (props.xl) {
+        return `flex: 0 0 ${calcCol(props.xl, true)};`;
+      }
+      return `flex: 0 0 ${calcCol(props.lg || props.md || props.sm!, true)};`;
+    }}
   }
 `;
 

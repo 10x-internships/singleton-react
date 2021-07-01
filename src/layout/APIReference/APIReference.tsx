@@ -22,6 +22,11 @@ const StyledAPIReference = styled.section`
       display: none;
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 `;
 
 const APIHeading = styled.div`
