@@ -6,6 +6,7 @@ import { singletonAPI } from '../../api/config';
 import styled from 'styled-components';
 import Container from '../../components/Container';
 import FeatureItem from './FeatureItem';
+import Loader from '../../components/Loader';
 
 type FeaturesListType = {
   id: string;
@@ -108,9 +109,9 @@ const Features = () => {
     <StyledFeatures>
       <Container>
         <SubHeading typoTag={TypoTag.H2}>Save time managing social media for your business</SubHeading>
+        {isLoading && <Loader />}
         <FeaturesList>
-          {isLoading && <div>Loading...</div>}
-          {featuresList.length && featuresList.map((feature) => <FeatureItem key={feature.id} {...feature} />)}
+          {featuresList.length !== 0 && featuresList.map((feature) => <FeatureItem key={feature.id} {...feature} />)}
         </FeaturesList>
         <FeaturesExplore>
           <Body typoTag={TypoTag.Paragraph}>
