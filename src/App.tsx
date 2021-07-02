@@ -1,14 +1,16 @@
-import { Button, ButtonIcon, ButtonColor, ButtonVariant } from './components/Button';
-import { ArrowForward, ArrowRightAlt } from './components/Icon';
+import { Header } from './components/Header';
+import HomePage from './pages/Home';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div>
-      <Button colorType={ButtonColor.Primary} variant={ButtonVariant.Filled} icon={<ArrowForward />}>
-        Button
-      </Button>
-      <ButtonIcon icon={<ArrowRightAlt />} disabled />
-    </div>
+    <>
+      <Header />
+      <main>
+        <HomePage />
+      </main>
+      <Footer />
+    </>
   );
 }
 
