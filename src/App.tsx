@@ -1,12 +1,12 @@
-import { Header } from './layout/Header';
-import Home from './pages/Home';
+import { Header } from './components/Header';
+import HomePage from './pages/Home';
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Home />
+        <HomePage />
       </main>
       {/* Footer */}
     </>
