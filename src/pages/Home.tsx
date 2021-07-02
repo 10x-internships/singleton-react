@@ -1,8 +1,9 @@
-import { Hero } from '../layout/Hero';
-import { Logos } from '../layout/Logos';
-import { Features } from '../layout/Features';
-import { APIReference } from '../layout/APIReference';
-import { Invitation } from '../layout/Invitation';
+import { Hero } from '../fragments/homepage/Hero';
+import { Logos } from '../fragments/homepage/Logos';
+import { Features } from '../fragments/homepage/Features';
+import { APIReference } from '../fragments/homepage/APIReference';
+import { Invitation } from '../fragments/homepage/Invitation';
+import { Pricing } from '../fragments/homepage/Pricing';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Features />
       <APIReference />
       <Invitation />
+      <Pricing />
     </>
   );
 };
