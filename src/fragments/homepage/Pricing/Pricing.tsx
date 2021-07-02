@@ -75,7 +75,7 @@ const Pricing = () => {
         <Row rowGap={24}>
           {priceList.length !== 0 &&
             priceList.map((price) => (
-              <Col key={price.id} order={price.order} md={ColumnNumber.TWELVE} lg={ColumnNumber.FOUR}>
+              <Col key={price.id} md={ColumnNumber.TWELVE} lg={ColumnNumber.FOUR}>
                 <PricingItem {...price} />
               </Col>
             ))}
