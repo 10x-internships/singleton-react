@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import Col from '../../../components/Col';
 import Row from '../../../components/Row';
 import { palette } from '../../../styles/GlobalStyle';
+import { SubHeadingWrapper, CaptionWrapper } from '../../../components/Typography';
 
 export const StyledInvitation = styled.section`
   padding-top: 32px;
   padding-bottom: 32px;
   margin-top: 32px;
 
-  & h2 {
+  & ${SubHeadingWrapper} {
     text-align: center;
   }
 
@@ -56,7 +57,7 @@ export const InvitationVideo = styled.div`
     margin-right: 8px;
   }
 
-  & span {
+  & ${CaptionWrapper} {
     color: ${palette.secondary.main};
   }
 `;

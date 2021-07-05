@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import Container from '../../../components/Container';
+import LogosContainer from '../../../components/Container';
 import logosData from './logosData';
 import { rgba } from 'polished';
 
 const StyledLogos = styled.section`
   margin-top: 32px;
 
-  & ${Container} {
+  & ${LogosContainer} {
     padding-top: 32px;
     padding-bottom: 32px;
     display: flex;
@@ -47,13 +47,13 @@ const LogoWrapper = styled.div`
 const Logos = () => {
   return (
     <StyledLogos>
-      <Container>
+      <LogosContainer>
         {logosData.map((logo) => (
           <LogoWrapper key={logo.name}>
             <img src={logo.path} alt={logo.name} />
           </LogoWrapper>
         ))}
-      </Container>
+      </LogosContainer>
     </StyledLogos>
   );
 };

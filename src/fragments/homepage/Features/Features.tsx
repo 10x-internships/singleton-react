@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { SubHeading, Body, TypoTag } from '../../../components/Typography';
+import { SubHeading, Body, SubHeadingWrapper, BodyWrapper, TypoTag } from '../../../components/Typography';
 import { Button } from '../../../components/Button';
 import { palette } from '../../../styles/GlobalStyle';
 import { singletonAPI } from '../../../api/config';
@@ -21,17 +21,17 @@ const StyledFeatures = styled.section`
   padding-bottom: 32px;
   margin-top: 32px;
 
-  & h2 {
+  & ${SubHeadingWrapper} {
     margin-bottom: 48px;
     text-align: center;
   }
 
-  & p {
+  & ${BodyWrapper} {
     color: ${palette.neutral.gray};
   }
 
   @media screen and (min-width: 768px) {
-    & h2 {
+    & ${SubHeadingWrapper} {
       width: 79%;
       margin-left: auto;
       margin-right: auto;
@@ -39,13 +39,13 @@ const StyledFeatures = styled.section`
   }
 
   @media screen and (min-width: 1024px) {
-    & h2 {
+    & ${SubHeadingWrapper} {
       margin-bottom: 64px;
     }
   }
 
   @media screen and (min-width: 1200px) {
-    & h2 {
+    & ${SubHeadingWrapper} {
       margin-top: 48px;
       margin-bottom: 72px;
     }
@@ -72,19 +72,19 @@ const FeaturesList = styled.div`
 const FeaturesExplore = styled.div`
   text-align: center;
 
-  & p {
+  & ${BodyWrapper} {
     margin: 32px 0 16px;
   }
 
   @media screen and (min-width: 768px) {
-    & p {
+    & ${BodyWrapper} {
       width: 80%;
       margin: 32px auto 24px;
     }
   }
 
   @media screen and (min-width: 1024px) {
-    & p {
+    & ${BodyWrapper} {
       width: 62%;
       margin: 32px auto 24px;
     }
@@ -98,7 +98,8 @@ const Features = () => {
   useEffect(() => {
     async function fetchFeatures() {
       const featuresData = await singletonAPI.get('features');
-      setFeaturesList(featuresData.data.data);
+      const sortedData = featuresData.data.data.sort((a: FeaturesListType, b: FeaturesListType) => a.order - b.order);
+      setFeaturesList(sortedData);
       setIsLoading(false);
     }
 

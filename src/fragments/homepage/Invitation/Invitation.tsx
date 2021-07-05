@@ -4,8 +4,6 @@ import Col, { ColumnNumber } from '../../../components/Col';
 import { SubHeading, Body, Caption, TypoTag } from '../../../components/Typography';
 import { PlayCircle } from '../../../components/Icon';
 import { palette } from '../../../styles/GlobalStyle';
-import phone from '../../../assets/phone.jpg';
-import keyfolder from '../../../assets/keyfolder.svg';
 import { StyledInvitation, InvitationVideo, APIDescription } from './style';
 
 const Invitation = () => {
@@ -19,10 +17,10 @@ const Invitation = () => {
         </InvitationVideo>
         <Row>
           <Col md={ColumnNumber.SEVEN} lg={ColumnNumber.FIVE}>
-            <img src={phone} alt="Phone" />
+            <img src="images/phone.jpg" alt="Phone" />
           </Col>
           <Col lg={ColumnNumber.SEVEN}>
-            <img src={keyfolder} alt="A man with red shirt" />
+            <img src="images/keyfolder.jpg" alt="A man with red shirt" />
           </Col>
         </Row>
         <APIDescription>

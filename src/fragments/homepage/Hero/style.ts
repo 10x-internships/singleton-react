@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { palette } from '../../../styles/GlobalStyle';
-import Container from '../../../components/Container';
+import HeroContainer from '../../../components/Container';
+import { HeadingWrapper as HeroHeading, BodyWrapper as HeroDescription } from '../../../components/Typography';
 
 export const StyledHero = styled.section`
   padding: 48px 0;
@@ -9,14 +10,14 @@ export const StyledHero = styled.section`
   @media screen and (min-width: 1024px) {
     text-align: left;
 
-    & ${Container} {
+    & ${HeroContainer} {
       display: flex;
       align-items: flex-end;
     }
   }
 
   @media screen and (min-width: 1200px) {
-    & ${Container} {
+    & ${HeroContainer} {
       align-items: center;
       gap: 30px;
     }
@@ -28,17 +29,17 @@ export const HeroContent = styled.div`
     margin: 0 auto;
   }
 
-  & p {
+  & ${HeroDescription} {
     margin: 24px auto;
     color: ${palette.neutral.gray};
   }
 
   @media screen and (min-width: 768px) {
-    & h1 {
+    & ${HeroHeading} {
       width: 83.33%;
     }
 
-    & p {
+    & ${HeroDescription} {
       width: 66.66%;
       margin: 36px auto 32px;
     }
@@ -51,11 +52,11 @@ export const HeroContent = styled.div`
       margin: 0;
     }
 
-    & h1 {
+    & ${HeroHeading} {
       width: 100%;
     }
 
-    & p {
+    & ${HeroDescription} {
       margin: 36px 0 32px;
     }
   }
@@ -82,7 +83,7 @@ export const HeroContact = styled.form`
   display: flex;
 
   /* Style for the TextField  */
-  & div:first-child {
+  & > div:first-child {
     flex: 1;
     margin-right: 16px;
   }
