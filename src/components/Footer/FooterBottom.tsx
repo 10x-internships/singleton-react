@@ -22,7 +22,7 @@ const FooterForm = styled.div`
   display: flex;
   margin-bottom: 50px;
 
-  & div:first-child {
+  & > div:first-child {
     flex: 1;
     margin-right: 16px;
   }

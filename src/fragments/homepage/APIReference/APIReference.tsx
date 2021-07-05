@@ -3,10 +3,9 @@ import Container from '../../../components/Container';
 import Row from '../../../components/Row';
 import Col, { ColumnNumber } from '../../../components/Col';
 import { Puzzle, ArrowForward } from '../../../components/Icon';
-import { Title, SubHeading, TypoTag } from '../../../components/Typography';
+import { Title, SubHeading, SubHeadingWrapper, TypoTag } from '../../../components/Typography';
 import { Button } from '../../../components/Button';
 import { palette } from '../../../styles/GlobalStyle';
-import APIReferenceImage from '../../../assets/tennisplayer.svg';
 
 const StyledAPIReference = styled.section`
   padding-top: 32px;
@@ -32,20 +31,20 @@ const StyledAPIReference = styled.section`
 const APIHeading = styled.div`
   display: flex;
   align-items: center;
+`;
 
-  & div {
-    width: 64px;
-    height: 64px;
-    margin-right: 16px;
-    background-color: #ffe6df;
-    border-radius: 22px;
-    display: grid;
-    place-items: center;
-  }
+const APILogo = styled.div`
+  width: 64px;
+  height: 64px;
+  margin-right: 16px;
+  background-color: #ffe6df;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
 `;
 
 const APIContent = styled.div`
-  & h2 {
+  & ${SubHeadingWrapper} {
     margin: 32px 0;
   }
 
@@ -54,7 +53,7 @@ const APIContent = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    & h2 {
+    & ${SubHeadingWrapper} {
       margin: 48px 0;
     }
   }
@@ -66,14 +65,14 @@ const APIReference = () => {
       <Container>
         <Row>
           <Col md={ColumnNumber.SIX}>
-            <img src={APIReferenceImage} alt="Tennis player" />
+            <img src="/images/tennisplayer.jpg" alt="Tennis player" />
           </Col>
           <Col md={ColumnNumber.SIX}>
             <APIHeading>
-              <div>
+              <APILogo>
                 <Puzzle color={palette.accent.orange} />
-              </div>
-              <Title typoTag={TypoTag.H3}>API Reference</Title>
+              </APILogo>
+              <Title typoTag={TypoTag.Span}>API Reference</Title>
             </APIHeading>
             <APIContent>
               <SubHeading typoTag={TypoTag.H2}>We believe in helping people pay attention to what matters</SubHeading>
