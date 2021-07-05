@@ -21,14 +21,12 @@ type ColProps = {
   lg?: ColumnNumber;
   xl?: ColumnNumber;
   center?: boolean;
-  order?: number;
 };
 
 const calcCol = (col: number, isDesktop?: boolean) => {
   if (isDesktop) {
     return `calc(${(col / 12) * 100}% - 30px)`; // Subtract the gutter from desktop
   }
-
   return `calc(${(col / 12) * 100}% - 20px)`; // Subtract the gutter from tablet & mobile
 };
 
@@ -37,7 +35,6 @@ const Col = styled.div<ColProps>`
   flex-grow: 1;
   ${(props) => props.sm && `flex: 0 0 ${calcCol(props.sm)};`}
   ${(props) => props.center && `margin-left: auto; margin-right: auto`}
-  ${(props) => props.order && `order: ${props.order}`}
 
   @media screen and (min-width: 768px) {
     ${(props) => props.md && `flex: 0 0 ${calcCol(props.md)};`}
