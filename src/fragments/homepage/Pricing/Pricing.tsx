@@ -5,7 +5,7 @@ import Loader from '../../../components/Loader';
 import Container from '../../../components/Container';
 import Row from '../../../components/Row';
 import Col, { ColumnNumber } from '../../../components/Col';
-import { Body, SubHeading, TypoTag } from '../../../components/Typography';
+import { Body, SubHeading, BodyWrapper, SubHeadingWrapper, TypoTag } from '../../../components/Typography';
 import { palette } from '../../../styles/GlobalStyle';
 import PricingItem from './PricingItem';
 
@@ -23,12 +23,12 @@ const StyledPricing = styled.section`
   padding-bottom: 32px;
   margin-top: 32px;
 
-  & h2 {
+  & ${SubHeadingWrapper} {
     margin-bottom: 48px;
     text-align: center;
   }
 
-  & ${Container} > p {
+  & ${Container} > ${BodyWrapper} {
     margin-top: 24px;
     color: ${palette.neutral.gray};
   }
@@ -37,7 +37,7 @@ const StyledPricing = styled.section`
     padding-top: 48px;
     padding-bottom: 48px;
 
-    & ${Container} > p {
+    & ${Container} > ${BodyWrapper} {
       max-width: 80%;
       margin-top: 32px;
     }
@@ -46,7 +46,7 @@ const StyledPricing = styled.section`
   @media screen and (min-width: 1200px) {
     margin-top: 48px;
 
-    & h2 {
+    & ${SubHeadingWrapper} {
       max-width: 75%;
       text-align: left;
     }

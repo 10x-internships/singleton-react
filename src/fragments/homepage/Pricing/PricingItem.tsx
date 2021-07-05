@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Body, Title, TypoTag } from '../../../components/Typography';
+import { Body, Title, BodyWrapper, TitleWrapper, TypoTag } from '../../../components/Typography';
 import { palette } from '../../../styles/GlobalStyle';
 import { Button, ButtonColor, ButtonVariant } from '../../../components/Button';
 
@@ -23,35 +23,42 @@ const StyledPricingItem = styled.div<{ isDefault: boolean }>`
       background-color: ${palette.neutral.black};
     `}
 
-  & h4 {
+  & ${BodyWrapper}:first-child {
     margin-bottom: 28px;
     font-size: 18px;
     color: ${palette.neutral.gray};
     line-height: 28px;
   }
 
-  & h3 {
-    font-size: 32px;
-    line-height: 40px;
+  & ${BodyWrapper}:nth-child(3) {
+    margin: 32px 0 55px;
+    white-space: pre-line;
 
-    & span {
+    & > * {
       font-size: 18px;
-      color: ${palette.neutral.gray};
       line-height: 28px;
     }
-  }
 
-  & p {
-    margin: 32px 0 55px;
-    font-size: 18px;
-    line-height: 28px;
-    white-space: pre-line;
-  }
-
-  @media screen and (min-width: 1024px) {
-    & p {
+    @media screen and (min-width: 1024px) {
       margin: 48px 0 88px;
     }
+  }
+`;
+
+const Price = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  & ${TitleWrapper} > * {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  & > span {
+    font-size: 18px;
+    color: ${palette.neutral.gray};
+    line-height: 28px;
   }
 `;
 
@@ -62,18 +69,22 @@ const PricingItem = (props: PricingItemProps) => {
 
   if (price) {
     priceElement = (
-      <Title typoTag={TypoTag.H3}>
-        ${price}
-        <Body typoTag={TypoTag.Span}>/month</Body>
-      </Title>
+      <Price>
+        <Title typoTag={TypoTag.Span}>${price}</Title>
+        <span>/month</span>
+      </Price>
     );
   } else {
-    priceElement = <Title typoTag={TypoTag.H3}>Free</Title>;
+    priceElement = (
+      <Price>
+        <Title typoTag={TypoTag.Span}>Free</Title>
+      </Price>
+    );
   }
 
   return (
     <StyledPricingItem isDefault={isDefault}>
-      <Body typoTag={TypoTag.H4}>{name}</Body>
+      <Body typoTag={TypoTag.H3}>{name}</Body>
       {priceElement}
       <Body typoTag={TypoTag.Paragraph}>{description}</Body>
       <Button colorType={ButtonColor.Secondary} variant={isDefault ? ButtonVariant.Filled : ButtonVariant.Outlined}>

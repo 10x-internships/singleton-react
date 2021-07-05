@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Title, Body, TypoTag } from '../../../components/Typography';
+import { Title, Body, TitleWrapper, BodyWrapper, TypoTag } from '../../../components/Typography';
 import { ButtonIcon } from '../../../components/Button';
 import { ArrowRightAlt } from '../../../components/Icon';
 import { palette } from '../../../styles/GlobalStyle';
@@ -20,11 +20,11 @@ const StyledFeatureItem = styled.div<{ order: number }>`
   display: flex;
   flex-direction: column;
 
-  & h3 {
+  & ${TitleWrapper} {
     margin-bottom: 18px;
   }
 
-  & p {
+  & ${BodyWrapper} {
     margin-top: auto;
     margin-bottom: 32px;
   }
@@ -39,11 +39,11 @@ const StyledFeatureItem = styled.div<{ order: number }>`
   @media screen and (min-width: 768px) {
     padding: 24px;
 
-    & h3 {
+    & ${TitleWrapper} {
       margin-bottom: 24px;
     }
 
-    & p {
+    & ${BodyWrapper} {
       margin-bottom: 40px;
     }
   }
@@ -71,7 +71,7 @@ const FeatureItem = ({ icon, name, description, order }: FeatureItemProps) => {
       <FeatureIcon>{getIcon(icon)}</FeatureIcon>
       <Title typoTag={TypoTag.H3}>{name}</Title>
       <Body typoTag={TypoTag.Paragraph}>{description}</Body>
-      <ButtonIcon icon={<ArrowRightAlt />} />
+      <ButtonIcon aria-label="Go to page" icon={<ArrowRightAlt />} />
     </StyledFeatureItem>
   );
 };
