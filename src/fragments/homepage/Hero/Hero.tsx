@@ -1,4 +1,4 @@
-import HeroContainer from 'components/Container';
+import HeroContainer from '../../../components/Container';
 import { Heading as HeroHeading, Body as HeroDescription, TypoTag } from '../../../components/Typography';
 import { Mail } from '../../../components/Icon';
 import { TextField } from '../../../components/TextField';
