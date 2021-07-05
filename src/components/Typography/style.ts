@@ -37,4 +37,10 @@ const StyledTypo = styled.div<TypoStyle>`
   }
 `;
 
+export const HeadingWrapper = styled.div``;
+export const SubHeadingWrapper = styled.div``;
+export const BodyWrapper = styled.div``;
+export const TitleWrapper = styled.div``;
+export const CaptionWrapper = styled.div``;
+
 export default StyledTypo;
