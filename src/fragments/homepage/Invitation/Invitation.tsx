@@ -20,7 +20,7 @@ const Invitation = () => {
             <img src="images/phone.jpg" alt="Phone" />
           </Col>
           <Col lg={ColumnNumber.SEVEN}>
-            <img src="images/keyfolder.jpg" alt="A man with red shirt" />
+            <img src="images/keyfolder.png" alt="A man with red shirt" />
           </Col>
         </Row>
         <APIDescription>
