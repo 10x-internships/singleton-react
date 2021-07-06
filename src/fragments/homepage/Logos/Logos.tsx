@@ -24,9 +24,19 @@ const StyledLogos = styled.section`
     }
 
     @media screen and (min-width: 1200px) {
+      position: relative;
       padding-top: 48px;
       padding-bottom: 48px;
-      border-top: 1px solid ${rgba('#a9abbd', 0.4)};
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 32px;
+        width: calc(100% - 64px);
+        height: 1px;
+        background-color: ${rgba('#a9abbd', 0.4)};
+      }
     }
   }
 `;
