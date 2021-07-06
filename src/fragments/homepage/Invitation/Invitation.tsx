@@ -1,9 +1,9 @@
-import Container from '../../../components/Container';
-import Row from '../../../components/Row';
-import Col, { ColumnNumber } from '../../../components/Col';
-import { SubHeading, Body, Caption, TypoTag } from '../../../components/Typography';
-import { PlayCircle } from '../../../components/Icon';
-import { palette } from '../../../styles/GlobalStyle';
+import Container from 'components/Container';
+import Row from 'components/Row';
+import Col, { ColumnNumber } from 'components/Col';
+import { SubHeading, Body, Caption, TypoTag } from 'components/Typography';
+import { PlayCircle } from 'components/Icon';
+import { palette } from 'styles/GlobalStyle';
 import { StyledInvitation, InvitationVideo, APIDescription } from './style';
 
 const Invitation = () => {
@@ -20,7 +20,7 @@ const Invitation = () => {
             <img src="images/phone.jpg" alt="Phone" />
           </Col>
           <Col lg={ColumnNumber.SEVEN}>
-            <img src="images/keyfolder.jpg" alt="A man with red shirt" />
+            <img src="images/keyfolder.png" alt="A man with red shirt" />
           </Col>
         </Row>
         <APIDescription>

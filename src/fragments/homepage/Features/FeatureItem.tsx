@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Title, Body, TitleWrapper, BodyWrapper, TypoTag } from '../../../components/Typography';
-import { ButtonIcon } from '../../../components/Button';
-import { ArrowRightAlt } from '../../../components/Icon';
-import { palette } from '../../../styles/GlobalStyle';
+import { Title, Body, TitleWrapper, BodyWrapper, TypoTag } from 'components/Typography';
+import { ButtonIcon } from 'components/Button';
+import { ArrowRightAlt } from 'components/Icon';
+import { palette } from 'styles/GlobalStyle';
 import getIcon from './getIcon';
 
 type FeatureItemProps = {

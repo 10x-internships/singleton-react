@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { palette } from '../../../styles/GlobalStyle';
-import HeroContainer from '../../../components/Container';
-import { HeadingWrapper as HeroHeading, BodyWrapper as HeroDescription } from '../../../components/Typography';
+import { palette } from 'styles/GlobalStyle';
+import HeroContainer from 'components/Container';
+import { HeadingWrapper as HeroHeading, BodyWrapper as HeroDescription } from 'components/Typography';
 
 export const StyledHero = styled.section`
   padding: 48px 0;

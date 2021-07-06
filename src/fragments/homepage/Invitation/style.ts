@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import Col from '../../../components/Col';
-import Row from '../../../components/Row';
-import { palette } from '../../../styles/GlobalStyle';
-import { SubHeadingWrapper, CaptionWrapper } from '../../../components/Typography';
+import Col from 'components/Col';
+import { palette } from 'styles/GlobalStyle';
+import { SubHeadingWrapper, CaptionWrapper } from 'components/Typography';
 
 export const StyledInvitation = styled.section`
   padding-top: 32px;
@@ -13,23 +12,23 @@ export const StyledInvitation = styled.section`
     text-align: center;
   }
 
-  & ${Row} ${Col} {
+  & ${Col} {
     background-color: ${palette.neutral.grayLight};
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  & ${Row} ${Col}:first-child {
+  & ${Col}:first-child {
     padding: 20px;
   }
 
-  & ${Row} ${Col}:last-child {
+  & ${Col}:last-child {
     padding: 34px;
   }
 
   @media screen and (max-width: 1023px) {
-    & ${Row} ${Col}:last-child {
+    & ${Col}:last-child {
       display: none;
     }
   }
@@ -40,7 +39,7 @@ export const StyledInvitation = styled.section`
   }
 
   @media screen and (max-width: 991px) and (min-width: 768px) {
-    & ${Row} ${Col}:first-child {
+    & ${Col}:first-child {
       margin: 0 auto;
     }
   }

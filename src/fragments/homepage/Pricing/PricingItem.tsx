@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { Body, Title, BodyWrapper, TitleWrapper, TypoTag } from '../../../components/Typography';
-import { palette } from '../../../styles/GlobalStyle';
-import { Button, ButtonColor, ButtonVariant } from '../../../components/Button';
+import { Body, Title, BodyWrapper, TitleWrapper, TypoTag } from 'components/Typography';
+import { palette } from 'styles/GlobalStyle';
+import { Button, ButtonColor, ButtonVariant } from 'components/Button';
 
 type PricingItemProps = {
   name: string;

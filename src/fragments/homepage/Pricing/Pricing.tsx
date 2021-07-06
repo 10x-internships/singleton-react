@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { singletonAPI } from '../../../api/config';
-import Loader from '../../../components/Loader';
-import Container from '../../../components/Container';
-import Row from '../../../components/Row';
-import Col, { ColumnNumber } from '../../../components/Col';
-import { Body, SubHeading, BodyWrapper, SubHeadingWrapper, TypoTag } from '../../../components/Typography';
-import { palette } from '../../../styles/GlobalStyle';
+import { singletonAPI } from 'config/api';
+import Loader from 'components/Loader';
+import Container from 'components/Container';
+import Row from 'components/Row';
+import Col, { ColumnNumber } from 'components/Col';
+import { Body, SubHeading, BodyWrapper, SubHeadingWrapper, TypoTag } from 'components/Typography';
+import { palette } from 'styles/GlobalStyle';
 import PricingItem from './PricingItem';
 
 type PriceList = {

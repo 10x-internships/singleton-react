@@ -1,5 +1,5 @@
-import { Lock, Flame, Puzzle, Team, User, Mail } from '../../../components/Icon';
-import { palette } from '../../../styles/GlobalStyle';
+import { Lock, Flame, Puzzle, Team, User, Mail } from 'components/Icon';
+import { palette } from 'styles/GlobalStyle';
 
 const getIcon = (icon: string) => {
   switch (icon) {

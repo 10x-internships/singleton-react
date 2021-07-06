@@ -1,20 +1,16 @@
 import styled from 'styled-components';
-import Container from '../../../components/Container';
-import Row from '../../../components/Row';
-import Col, { ColumnNumber } from '../../../components/Col';
-import { Puzzle, ArrowForward } from '../../../components/Icon';
-import { Title, SubHeading, SubHeadingWrapper, TypoTag } from '../../../components/Typography';
-import { Button } from '../../../components/Button';
-import { palette } from '../../../styles/GlobalStyle';
+import Container from 'components/Container';
+import Row, { Align } from 'components/Row';
+import Col, { ColumnNumber } from 'components/Col';
+import { Puzzle, ArrowForward } from 'components/Icon';
+import { Title, SubHeading, SubHeadingWrapper, TypoTag } from 'components/Typography';
+import { Button } from 'components/Button';
+import { palette } from 'styles/GlobalStyle';
 
 const StyledAPIReference = styled.section`
   padding-top: 32px;
   padding-bottom: 32px;
   margin-top: 32px;
-
-  & ${Row} {
-    align-items: center;
-  }
 
   @media screen and (max-width: 767px) {
     & ${Col}:first-child {
@@ -63,7 +59,7 @@ const APIReference = () => {
   return (
     <StyledAPIReference>
       <Container>
-        <Row>
+        <Row align={Align.CENTER}>
           <Col md={ColumnNumber.SIX}>
             <img src="/images/tennisplayer.jpg" alt="Tennis player" />
           </Col>

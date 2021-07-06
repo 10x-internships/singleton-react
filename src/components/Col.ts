@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
 export enum ColumnNumber {
   ONE = 1,
   TWO,
@@ -23,36 +22,33 @@ type ColProps = {
   center?: boolean;
 };
 
-const calcCol = (col: number, isDesktop?: boolean) => {
-  if (isDesktop) {
-    return `calc(${(col / 12) * 100}% - 30px)`; // Subtract the gutter from desktop
-  }
-  return `calc(${(col / 12) * 100}% - 20px)`; // Subtract the gutter from tablet & mobile
+const calcCol = (col: number) => {
+  return ((col / 12) * 100).toFixed(2);
 };
 
 const Col = styled.div<ColProps>`
+  --gutters: 20px;
+
   margin-left: 20px;
   flex-grow: 1;
-  ${(props) => props.sm && `flex: 0 0 ${calcCol(props.sm)};`}
   ${(props) => props.center && `margin-left: auto; margin-right: auto`}
+  ${({ sm, md, lg, xl }) => css`
+    ${sm && `flex: 0 0 calc(${calcCol(sm)}% - var(--gutters));`}
 
-  @media screen and (min-width: 768px) {
-    ${(props) => props.md && `flex: 0 0 ${calcCol(props.md)};`}
-  }
+    @media screen and (min-width: 768px) {
+      ${md && `flex: 0 0 calc(${calcCol(md)}% - var(--gutters));`}
+    }
 
-  @media screen and (min-width: 1024px) {
-    ${(props) => props.lg && `flex: 0 0 ${calcCol(props.lg)};`}
-  }
+    @media screen and (min-width: 1024px) {
+      ${lg && `flex: 0 0 calc(${calcCol(lg)}% - var(--gutters));`}
+    }
 
-  @media screen and (min-width: 1200px) {
-    margin-left: 30px;
-    ${(props) => {
-      if (props.xl) {
-        return `flex: 0 0 ${calcCol(props.xl, true)};`;
-      }
-      return `flex: 0 0 ${calcCol(props.lg || props.md || props.sm!, true)};`;
-    }}
-  }
+    @media screen and (min-width: 1200px) {
+      --gutters: 30px;
+      margin-left: 30px;
+      flex: 0 0 calc(${calcCol(xl || lg || md || sm || 12)}% - var(--gutters));
+    }
+  `}
 `;
 
 export default Col;
