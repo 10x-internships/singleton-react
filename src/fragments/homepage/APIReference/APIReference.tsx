@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Container from '../../../components/Container';
-import Row from '../../../components/Row';
-import Col, { ColumnNumber } from '../../../components/Col';
-import { Puzzle, ArrowForward } from '../../../components/Icon';
-import { Title, SubHeading, SubHeadingWrapper, TypoTag } from '../../../components/Typography';
-import { Button } from '../../../components/Button';
-import { palette } from '../../../styles/GlobalStyle';
+import Container from 'components/Container';
+import Row from 'components/Row';
+import Col, { ColumnNumber } from 'components/Col';
+import { Puzzle, ArrowForward } from 'components/Icon';
+import { Title, SubHeading, SubHeadingWrapper, TypoTag } from 'components/Typography';
+import { Button } from 'components/Button';
+import { palette } from 'styles/GlobalStyle';
 
 const StyledAPIReference = styled.section`
   padding-top: 32px;

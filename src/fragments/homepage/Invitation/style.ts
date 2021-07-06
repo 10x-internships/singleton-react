@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Col from '../../../components/Col';
-import Row from '../../../components/Row';
-import { palette } from '../../../styles/GlobalStyle';
-import { SubHeadingWrapper, CaptionWrapper } from '../../../components/Typography';
+import Col from 'components/Col';
+import Row from 'components/Row';
+import { palette } from 'styles/GlobalStyle';
+import { SubHeadingWrapper, CaptionWrapper } from 'components/Typography';
 
 export const StyledInvitation = styled.section`
   padding-top: 32px;

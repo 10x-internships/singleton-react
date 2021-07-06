@@ -1,9 +1,9 @@
-import Container from '../../../components/Container';
-import Row from '../../../components/Row';
-import Col, { ColumnNumber } from '../../../components/Col';
-import { SubHeading, Body, Caption, TypoTag } from '../../../components/Typography';
-import { PlayCircle } from '../../../components/Icon';
-import { palette } from '../../../styles/GlobalStyle';
+import Container from 'components/Container';
+import Row from 'components/Row';
+import Col, { ColumnNumber } from 'components/Col';
+import { SubHeading, Body, Caption, TypoTag } from 'components/Typography';
+import { PlayCircle } from 'components/Icon';
+import { palette } from 'styles/GlobalStyle';
 import { StyledInvitation, InvitationVideo, APIDescription } from './style';
 
 const Invitation = () => {
