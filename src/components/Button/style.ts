@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
-import { palette } from '../../styles/GlobalStyle';
 import { StyledButtonProps, StyledButtonIconProps, ButtonVariant, ButtonColor } from './type';
 
 const buttonBase = (color: string, border: string | number, borderRadius: string, bg: string, disabled?: boolean) => css`
@@ -21,7 +20,7 @@ const buttonBase = (color: string, border: string | number, borderRadius: string
 
 // Style for normal button
 export const StyledButton = styled.button<StyledButtonProps>`
-  ${(props) => buttonBase(palette.neutral.white, '2px solid transparent', '5px', 'transparent', props.disabled)}
+  ${({ theme, disabled }) => buttonBase(theme.neutral.white, '2px solid transparent', '5px', 'transparent', disabled)}
 
   padding: 6px 14px;
   text-align: center;
@@ -32,41 +31,41 @@ export const StyledButton = styled.button<StyledButtonProps>`
     margin-left: 8px;
   }
 
-  ${({ variant = ButtonVariant.Filled, colorType = ButtonColor.Primary, disabled }) => {
+  ${({ theme, variant = ButtonVariant.Filled, colorType = ButtonColor.Primary, disabled }) => {
     const alpha = 0.1;
     if (variant === 'filled') {
       return css`
-        background-color: ${palette[colorType].main};
+        background-color: ${theme[colorType].main};
 
         &:hover {
-          background-color: ${palette[colorType].light};
+          background-color: ${theme[colorType].light};
         }
         &:active {
-          background-color: ${palette[colorType].dark};
+          background-color: ${theme[colorType].dark};
         }
-        ${disabled && `background-color: ${palette[colorType].lightest};`}
+        ${disabled && `background-color: ${theme[colorType].lightest};`}
       `;
     }
 
     return css`
-      color: ${palette[colorType].main};
-      ${variant === 'outlined' && `border: 2px solid ${palette[colorType].main};`}
+      color: ${theme[colorType].main};
+      ${variant === 'outlined' && `border: 2px solid ${theme[colorType].main};`}
 
       &:hover {
-        color: ${palette[colorType].light};
-        background-color: ${rgba(`${palette[colorType].light}`, alpha)};
-        ${variant === 'outlined' && `border-color: ${palette[colorType].light};`}
+        color: ${theme[colorType].light};
+        background-color: ${rgba(`${theme[colorType].light}`, alpha)};
+        ${variant === 'outlined' && `border-color: ${theme[colorType].light};`}
       }
       &:active {
-        color: ${palette[colorType].dark};
-        background-color: ${rgba(`${palette[colorType].dark}`, alpha)};
-        ${variant === 'outlined' && `border-color: ${palette[colorType].dark};`}
+        color: ${theme[colorType].dark};
+        background-color: ${rgba(`${theme[colorType].dark}`, alpha)};
+        ${variant === 'outlined' && `border-color: ${theme[colorType].dark};`}
       }
       ${disabled &&
       `
-        color: ${palette[colorType].lightest};
-        background-color: ${rgba(`${palette[colorType].lightest}`, alpha)};
-        ${variant === 'outlined' && `border-color: ${palette[colorType].lightest};`}
+        color: ${theme[colorType].lightest};
+        background-color: ${rgba(`${theme[colorType].lightest}`, alpha)};
+        ${variant === 'outlined' && `border-color: ${theme[colorType].lightest};`}
       `}
     `;
   }};
@@ -74,24 +73,27 @@ export const StyledButton = styled.button<StyledButtonProps>`
 
 // Style for Button Circle with Icon
 export const StyledButtonIcon = styled.button<StyledButtonIconProps>`
-  ${(props) => buttonBase(palette.secondary.main, 0, '100%', palette.neutral.white, props.disabled)}
+  ${({ theme, disabled }) => buttonBase(theme.secondary.main, 0, '100%', theme.neutral.white, disabled)}
   width: 64px;
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  &:hover {
-    color: ${palette.neutral.white};
-    background-color: ${palette.secondary.light};
-  }
-  &:active {
-    background-color: ${palette.secondary.dark};
-  }
-  ${(props) =>
-    props.disabled &&
+  ${({ theme }) => `
+    &:hover {
+      color: ${theme.neutral.white};
+      background-color: ${theme.secondary.light};
+    }
+    &:active {
+      background-color: ${theme.secondary.dark};
+    }
+  `}
+
+  ${({ theme, disabled }) =>
+    disabled &&
     `
-    color: ${palette.neutral.white};
-    background-color: ${palette.secondary.lightest};
+    color: ${theme.neutral.white};
+    background-color: ${theme.secondary.lightest};
   `}
 `;
