@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import LogosContainer from '../../../components/Container';
+import LogosContainer from 'components/Container';
 import logosData from './logosData';
 import { rgba } from 'polished';
 

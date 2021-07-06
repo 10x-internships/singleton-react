@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SubHeading, Body, SubHeadingWrapper, BodyWrapper, TypoTag } from '../../../components/Typography';
 import { Button } from '../../../components/Button';
 import { palette } from '../../../styles/GlobalStyle';
-import { singletonAPI } from '../../../api/config';
+import { singletonAPI } from '../../../config/api';
 import styled from 'styled-components';
 import Container from '../../../components/Container';
 import FeatureItem from './FeatureItem';
