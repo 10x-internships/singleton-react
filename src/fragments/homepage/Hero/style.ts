@@ -55,6 +55,11 @@ export const HeroContent = styled.div`
     & ${HeroHeading} {
       width: 100%;
     }
+
+    & ${HeroDescription} {
+      width: 66.66%;
+      margin: 36px 0 32px;
+    }
   }
 
   @media screen and (min-width: 1200px) {
