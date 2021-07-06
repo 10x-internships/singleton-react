@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { SubHeading, Body, SubHeadingWrapper, BodyWrapper, TypoTag } from '../../../components/Typography';
-import { Button } from '../../../components/Button';
-import { palette } from '../../../styles/GlobalStyle';
-import { singletonAPI } from '../../../config/api';
 import styled from 'styled-components';
-import Container from '../../../components/Container';
+import { SubHeading, Body, SubHeadingWrapper, BodyWrapper, TypoTag } from 'components/Typography';
+import { Button } from 'components/Button';
+import { palette } from 'styles/GlobalStyle';
+import { singletonAPI } from 'config/api';
+import Container from 'components/Container';
 import FeatureItem from './FeatureItem';
-import Loader from '../../../components/Loader';
+import Loader from 'components/Loader';
 
 type FeaturesListType = {
   id: string;
