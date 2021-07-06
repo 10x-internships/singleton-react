@@ -17,7 +17,7 @@ const NavMenuAuth = styled.div`
     margin: 24px 0;
   }
 
-  & div {
+  & > div {
     width: 100%;
     height: 1px;
     background-color: ${palette.neutral.gray};
